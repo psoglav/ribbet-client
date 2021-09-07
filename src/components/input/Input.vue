@@ -1,10 +1,6 @@
 <template>
   <div class="input-container">
-    <div
-      class="input"
-      :class="{ focused, empty: !value }"
-      :placeholder="placeholder"
-    >
+    <div class="input" :class="{ focused, empty: !value }" :placeholder="name">
       <input
         @focus="focused = true"
         @blur="focused = false"
@@ -21,7 +17,7 @@
 import { ref } from "vue";
 
 const props = defineProps({
-  placeholder: String,
+  name: String,
   secure: Boolean,
 });
 

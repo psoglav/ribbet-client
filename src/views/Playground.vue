@@ -1,12 +1,24 @@
 <template>
   <div class="playground">
-    <Input placeholder="Email" />
-    <Input placeholder="Password" secure />
+    <Input :name="t('form.email')" />
+    <Input :name="t('form.password')" secure />
   </div>
 </template>
 
 <script setup>
 import Input from "@/components/input/Input";
+
+import { useI18n } from "vue-i18n";
+
+const { t, locale } = useI18n({
+  useScope: "global",
+});
+
+locale.value = "en";
+
+defineExpose({
+  t,
+});
 </script>
 
 <style lang="scss">
