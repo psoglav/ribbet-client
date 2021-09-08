@@ -55,6 +55,10 @@ $accent: #b1acff;
     transition: height 0.2s ease, box-shadow 0.3s 0.1s ease;
     border: 2px #f7f7f7 solid;
 
+    &:hover {
+      border: 2px #e4e4e4 solid;
+    }
+
     &.focused {
       border-radius: 25px;
       background-color: #f9f9f9;
