@@ -53,6 +53,7 @@ $accent: #b1acff;
     position: relative;
     box-sizing: content-box;
     transition: height 0.2s ease, box-shadow 0.3s 0.1s ease;
+    border: 2px #f7f7f7 solid;
 
     &.focused {
       border-radius: 25px;
