@@ -2,11 +2,13 @@
   <div class="playground">
     <Input :name="t('form.email')" autofocus />
     <Input :name="t('form.password')" secure />
+    <Button value="Sign In" />
   </div>
 </template>
 
 <script setup>
 import Input from "@/components/input/Input";
+import Button from "@/components/button/Button";
 
 import { useI18n } from "vue-i18n";
 
