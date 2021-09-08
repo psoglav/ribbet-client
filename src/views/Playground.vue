@@ -1,6 +1,6 @@
 <template>
   <div class="playground">
-    <Input :name="t('form.email')" />
+    <Input :name="t('form.email')" autofocus />
     <Input :name="t('form.password')" secure />
   </div>
 </template>

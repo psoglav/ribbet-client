@@ -5,6 +5,7 @@
         @focus="focused = true"
         @blur="focused = false"
         v-model="value"
+        :autofocus="autofocus"
         spellcheck="false"
         :type="secure ? 'password' : 'text'"
         :class="{ secure }"
@@ -19,6 +20,7 @@ import { ref } from "vue";
 const props = defineProps({
   name: String,
   secure: Boolean,
+  autofocus: Boolean,
 });
 
 const focused = ref(false);
