@@ -1,60 +1,103 @@
 <template>
-  <div class="button">{{ value }}</div>
+  <div @click="handleClick" class="button" :class="{ loading }">
+    {{ value }}
+    <span class="button__loading-dots" :class="{ loading }">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+  </div>
 </template>
 
 <script setup>
+import { ref } from "vue";
+
 defineProps({
   value: String,
+});
+
+const loading = ref(false);
+
+const emit = defineEmits(["click"]);
+
+function handleClick() {
+  emit("click", {
+    async wait(promise) {
+      loading.value = true;
+      promise.then(() => {
+        loading.value = false;
+      });
+    },
+  });
+}
+
+defineExpose({
+  loading,
 });
 </script>
 
 <style lang="scss">
 .button {
-  width: 130px;
+  width: min-content;
+  padding: 0 33px;
+  white-space: nowrap;
   height: 35px;
   color: white;
   font-family: Nunito;
   font-weight: 700;
   letter-spacing: 0.05rem;
-  background-color: #000;
-  display: grid;
-  align-content: center;
+  background: #000;
+  display: flex;
+  align-items: center;
   font-size: 1.1rem;
   border-radius: 25px;
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  filter: blur(0.7px);
   user-select: none;
   transition: box-shadow 1s ease;
+  gap: 2px;
+  // box-shadow: 0 0 0px calc(100vw / 2) black;
+  transition: max-width 0.5s ease;
 
+  &:active,
   &:hover {
-    filter: blur(0px);
     &::before,
     &::after {
-      transition: none;
       opacity: 0.5;
+      transition: none;
     }
   }
 
   &:active {
+    color: black;
+    background: rgb(128, 128, 128);
+  }
+
+  &.loading {
     box-shadow: 0 0 15px black;
     filter: blur(0px);
-    transition: none;
+    transition: box-shadow 1s ease;
     &::before,
     &::after {
-      transition: opacity 0.4s ease !important;
+      transition: opacity 0.4s ease;
       opacity: 0;
     }
   }
 
+  &.loading {
+    background-color: #000;
+    color: white;
+    cursor: progress;
+  }
+
   &::before,
   &::after {
+    opacity: 0;
     transition: opacity 0.05s ease, transform 0.2s ease;
     position: absolute;
     content: "";
     border-radius: 40px;
-    opacity: 0.3;
   }
 
   &::after {

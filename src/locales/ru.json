@@ -2,5 +2,8 @@
   "form": {
     "email": "Email",
     "password": "Пароль"
+  },
+  "auth": {
+    "signin": "Войти"
   }
 }
