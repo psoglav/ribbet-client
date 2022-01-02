@@ -52,7 +52,7 @@ $accent: #b1acff;
     overflow: hidden;
     position: relative;
     box-sizing: content-box;
-    transition: height 0.2s ease, box-shadow 0.3s 0.1s ease;
+    transition: height 0.2s ease, box-shadow 0.3s 0.1s ease, border-radius .3s .3s ease;
     border: 2px #f7f7f7 solid;
 
     &:hover {
