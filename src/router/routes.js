@@ -1,9 +1,9 @@
-import Playground from '@/views/Playground'
+import Auth from '@/views/Auth'
 
 export default [
   {
     path: '/',
-    name: 'Playground',
-    component: Playground
+    name: 'Auth',
+    component: Auth
   },
 ]
