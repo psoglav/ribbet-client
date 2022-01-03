@@ -1,6 +1,6 @@
 <template>
   <div class="signin-form smooth-card">
-    <h2 class="signin-form__title">Ribbet.</h2>
+    <div class="signin-form__title blurry-heading">!!! croak !!!</div>
     <div class="signin-form__form">
       <Input :name="t('form.email')" autofocus />
       <Input :name="t('form.password')" secure />
@@ -43,22 +43,17 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/scss/ui/elements.scss";
+@import "@/scss/typography.scss";
 
 .signin-form {
   gap: 20px;
   display: grid;
   overflow: hidden;
   position: relative;
-
+  
   &__title {
-    font-family: Poppins;
-    text-align: left;
-    text-indent: 1rem;
-    height: 40px;
-    display: grid;
-    align-content: flex-end;
-    display: flex;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    // text-indent: 1rem;
   }
 
   &__form {
