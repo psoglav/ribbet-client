@@ -1,7 +1,9 @@
 <template>
+  <img :src="require('@/assets/LOGO.svg')" class="logo" />
   <div class="page">
     <div class="container">
       <Bubbles />
+      <!-- <Bubbles blur="70" /> -->
       <SignInForm />
     </div>
   </div>
@@ -22,6 +24,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/scss/ui/elements.scss";
+@import "@/scss/typography.scss";
 @import "@/scss/anime.scss";
 
 @keyframes fade-in {
@@ -37,13 +40,23 @@ svg {
   width: 0px;
 }
 
+.logo {
+  position: absolute;
+  z-index: 10;
+  top: 100px;
+  left: 50%;
+  width: 230px;
+  height: 230px;
+  transform: translateX(-50%);
+}
+
 .page {
-  background: url("../assets/img/bg.svg");
   height: 100vh;
   display: grid;
   place-content: center;
   box-sizing: content-box;
   overflow: hidden;
+  background: url("../assets/img/bg.svg");
   filter: url("#bubbles");
 
   .container {
@@ -54,7 +67,8 @@ svg {
 
     .signin-form {
       transform: translateY(20px);
-      animation: fade-in 500ms ease forwards;
+      opacity: 0;
+      animation: fade-in 2500ms ease forwards;
     }
   }
 }
