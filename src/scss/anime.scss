@@ -1,0 +1,11 @@
+@mixin ms-delay-class($ms) {
+  .ad#{$ms}ms {
+    animation-delay: #{$ms};
+  }
+}
+
+@mixin s-delay-class($s) {
+  .ad#{$s}s {
+    animation-delay: #{$s}s;
+  }
+}
