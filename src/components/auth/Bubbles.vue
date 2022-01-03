@@ -37,6 +37,7 @@ export default {
 @keyframes bubble-up {
   to {
     transform: translateY(-50vh);
+    opacity: 1;
   }
 }
 
@@ -51,6 +52,7 @@ export default {
   width: 50px;
   top: 20px;
   position: absolute;
+  opacity: 0;
 }
 
 .bubble-1 {
