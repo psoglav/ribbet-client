@@ -39,7 +39,7 @@ $accent: #b1acff;
 
 .input-container {
   width: $W + 5px;
-  height: $H + 5px;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -52,7 +52,8 @@ $accent: #b1acff;
     overflow: hidden;
     position: relative;
     box-sizing: content-box;
-    transition: height 0.2s ease, box-shadow 0.3s 0.1s ease, border-radius .3s .3s ease;
+    transition: height 0.2s ease, box-shadow 0.3s 0.1s ease,
+      border-radius 0.3s 0.3s ease;
     border: 2px #f7f7f7 solid;
 
     &:hover {
@@ -60,7 +61,6 @@ $accent: #b1acff;
     }
 
     &.focused {
-      border-radius: 25px;
       background-color: #f9f9f9;
       box-shadow: 0 0 5px 8px #efefef, 5px 5px 5px rgba(0, 0, 0, 0.24) inset;
       border: 2px $accent solid;
