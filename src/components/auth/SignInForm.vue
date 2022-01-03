@@ -1,5 +1,5 @@
 <template>
-  <div class="signin-form">
+  <div class="signin-form smooth-card">
     <h2 class="signin-form__title">Ribbet.</h2>
     <div class="signin-form__form">
       <Input :name="t('form.email')" autofocus />
@@ -22,8 +22,8 @@ export default {
     Button,
   },
   setup() {
-    const { t, locale } = useI18n({locale: 'en'});
-    locale.value = 'en'
+    const { t, locale } = useI18n();
+    locale.value = "en";
 
     function signin(e) {
       e.wait(
@@ -42,15 +42,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/scss/ui/elements.scss";
+
 .signin-form {
-  box-shadow: 12px 12px 13px rgba(0, 0, 0, 0.075) inset;
-  gap: 25px;
+  gap: 20px;
   display: grid;
-  padding: 30px;
-  background-color: rgb(255, 255, 255);
-  border: 2px rgb(241, 241, 241) solid;
-  border-radius: 35px;
-  padding-bottom: 30px;
   overflow: hidden;
   position: relative;
 
@@ -61,7 +57,6 @@ export default {
     height: 40px;
     display: grid;
     align-content: flex-end;
-    // justify-self: center;
     display: flex;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
@@ -69,18 +64,17 @@ export default {
   &__form {
     display: flex;
     flex-direction: column;
-    gap: 21px;
+    gap: 10px;
     padding: 5px 0;
 
     .forgot-password {
       text-align: left;
       text-indent: 12px;
-      margin-top: -5px;
-      color: black;
+      color: #121214;
       font-size: 12px;
       text-decoration: none;
       font-weight: 800;
-      padding: 3px;
+      padding: 5px;
       border-radius: 15px;
 
       &:hover {
