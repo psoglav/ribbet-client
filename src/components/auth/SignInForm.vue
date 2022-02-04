@@ -47,6 +47,7 @@ export default {
 
 .signin-form {
   gap: 20px;
+  width: 20em;
   display: grid;
   overflow: hidden;
   position: relative;
