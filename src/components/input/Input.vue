@@ -33,36 +33,36 @@ defineExpose({
 </script>
 
 <style lang="scss" scoped>
-$W: 250px;
+@import "@/scss/colors.scss";
+
 $H: 35px;
-$accent: #b1acff;
 
 .input-container {
-  width: $W + 5px;
+  width: calc(100% + 5px);
   height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
 
   .input {
-    width: $W;
+    width: 100%;
     height: $H;
     border-radius: 18px;
-    background-color: #efefef;
+    background-color: $low-gray;
     overflow: hidden;
     position: relative;
     box-sizing: content-box;
     transition: height 0.2s ease, box-shadow 0.3s 0.1s ease,
       border-radius 0.3s 0.3s ease;
-    border: 2px #f7f7f7 solid;
+    border: 2px $lowest-gray solid;
 
     &:hover {
-      border: 2px #e4e4e4 solid;
+      border: 2px $mid-gray solid;
     }
 
     &.focused {
       background-color: #f9f9f9;
-      box-shadow: 0 0 5px 8px #efefef, 5px 5px 5px rgba(0, 0, 0, 0.24) inset;
+      box-shadow: 0 0 5px 8px $low-gray, 5px 5px 5px rgba(0, 0, 0, 0.24) inset;
       border: 2px $accent solid;
     }
 
@@ -70,8 +70,9 @@ $accent: #b1acff;
       height: 50px;
 
       &[placeholder]::after {
-        transform: scale(0.7) translateX($W - 280px); // TODO needs to be recalculated
-        top: 10%;
+        font-size: 0.8rem;
+        top: 15%;
+        text-transform: uppercase;
       }
 
       input {
@@ -90,18 +91,14 @@ $accent: #b1acff;
       content: attr(placeholder);
       text-align: left;
       pointer-events: none;
-      transition: transform 0.1s ease;
-      transform: translateX(18px);
-      color: #b8b8b8;
+      color: $highest-gray;
+      text-indent: 1rem;
       top: 20%;
-      left: 0;
       position: absolute;
       font-size: large;
       width: 100%;
       height: 30%;
-      filter: none;
       font-weight: 700;
-      border: none;
     }
 
     input {
